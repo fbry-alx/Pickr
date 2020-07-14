@@ -1,0 +1,22 @@
+<h2 class="page-header"><%= photo.title %></h2>
+<div class="photo-details">
+  <div>
+    <img class="photo-cover" src="<%= photo.coverImagePath %>">
+    <div class="photo-details-btn-grid">
+      <a class="btn btn-primary" href="/photos/<%= photo.id %>/edit">Edit</a>
+      <%- include('../partials/deleteForm', { url: `/photos/${photo.id}` }) %>
+      <a class="btn btn-primary photo-details-photographer-button"
+        href="/photographers/<%= photo.photographer.id %>">View
+        Photographer</a>
+    </div>
+  </div>
+  <div class="photo-details-grid">
+    <div class="photo-details-label">Photographer:</div>
+    <div><%= photo.photographer.name %></div>
+    <div class="photo-details-label">Date Posted:</div>
+    <div><%= photo.publishDate.toDateString() %></div>
+
+    <div class="photo-details-label">Description:</div>
+    <div><%= photo.description %></div>
+  </div>
+</div>

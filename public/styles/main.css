@@ -1,0 +1,41 @@
+@import 'shared/variables.css';
+@import 'shared/font.css';
+@import 'shared/header.css';
+@import 'shared/buttons.css';
+@import 'shared/form.css';
+@import 'shared/photographers.css';
+@import 'shared/photos.css';
+
+
+:root {
+   /* font-family: 'Lato', sans-serif; 
+   font-size: 20px; 
+   color: #7F8CB3;  */
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  /* background-color: #202847; */
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  margin-bottom: 3rem; 
+}
+
+.inner-container {
+  margin: 0 2rem;
+}
+
+.page-header {
+  font-size: 2rem; 
+  font-weight: 500;
+}
+
+.error-message {
+  color: #6A7090; 
+}

@@ -1,0 +1,24 @@
+<h2 class="page-header">Search Photographers</h2>
+<form action="/photographers" method="GET">
+  <div class="form-row">
+    <div class="form-item">
+      <label>Name</label>
+      <input type="text" name="name" autocomplete="off" value="<%= searchOptions.name %>">
+    </div>
+  </div>
+  <div class="form-row form-row-end">
+    <button class="btn btn-primary" type="submit">Search</button>
+  </div>
+</form>
+<br>
+<% photographers.forEach(photographer => { %>
+<div class="photographer-row">
+  <div class="photographer-name"><%= photographer.name %></div>
+  <div class="btn-row">
+    <a class="btn btn-primary" href="/photographers/<%= photographer.id %>">View</a>
+    <a class="btn btn-primary" href="/photographers/<%= photographer.id %>/edit">Edit</a>
+    <%- include('../partials/deleteForm',
+                  { url: `/photographers/${photographer.id}` }) %>
+  </div>
+</div>
+<% }) %>

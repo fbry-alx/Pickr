@@ -1,0 +1,24 @@
+<h2 class="page-header">Search Photo</h2>
+<form action="/photos" method="GET">
+  <div class="form-row">
+    <div class="form-item">
+      <label>Title</label>
+      <input type="text" name="title" autocomplete="off" value="<%= searchOptions.title %>">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-item">
+      <label>Posted After</label>
+      <input type="date" name="publishedAfter" value="<%= searchOptions.publishedAfter %>">
+    </div>
+    <div class="form-item">
+      <label>Posted Before</label>
+      <input type="date" name="publishedBefore" value="<%= searchOptions.publishedBefore %>">
+    </div>
+  </div>
+  <div class="form-row form-row-end">
+    <button class="btn btn-primary" type="submit">Search</button>
+  </div>
+</form>
+<br>
+<%- include('../partials/photoGrid', { photos: photos, large: true }) %>
