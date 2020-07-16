@@ -16,7 +16,7 @@
   <div class="photographer-name"><%= photographer.name %></div>
   <div class="btn-row">
     <a class="btn btn-primary" href="/photographers/<%= photographer.id %>">View</a>
-    <a class="btn btn-primary" href="/photographers/<%= photographer.id %>/edit">Edit</a>
+    <a class="btn btn-primary" href="/photographers/<%= photographer.id %>/edit">Edit</i></a>
     <%- include('../partials/deleteForm',
                   { url: `/photographers/${photographer.id}` }) %>
   </div>

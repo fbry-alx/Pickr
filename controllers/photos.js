@@ -63,6 +63,8 @@ router.get('/:id', async (req, res) => {
   }
 })
 
+
+
 // Edit photo Route
 router.get('/:id/edit', async (req, res) => {
   try {

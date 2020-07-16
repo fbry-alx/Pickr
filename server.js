@@ -10,9 +10,12 @@ const methodOverride = require('method-override')
 
 const PORT = process.env.PORT || 5000;
 
+
+
 const indexRouter = require('./controllers/index')
 const photographerRouter = require('./controllers/photographers')
 const photoRouter = require('./controllers/photos')
+
 
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
@@ -21,6 +24,8 @@ app.use(expressLayouts)
 app.use(methodOverride('_method'))
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }))
+
+
 
 const mongoose = require('mongoose')
 mongoose.connect(process.env.DATABASE_URL, {

@@ -92,12 +92,16 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
   let photographer
   try {
-    photographer = await Photographer.findByIdAndDelete(req.params.id)
+    photographer = await Photographer.findById(req.params.id)
+    await photographer.remove()
+    Photo.deleteMany({ photographer: photographer._id })
     res.redirect('/photographers')
   } catch (error) {
+    console.log(error)
     if (photographer == null) {
       res.redirect('/')
     } else {
+      // const contaxt = { error: true }
       res.redirect(`/photographers/${photographer.id}`)
     }
   }
